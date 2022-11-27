@@ -26,13 +26,17 @@ flag threaded
 library
   hs-source-dirs: src
   exposed-modules: Omg
+                   Gui
                    Parser.Omg
   build-depends: base >= 4.2 && < 5
                , bytestring
                , text
                , aeson
+               , lens
                , megaparsec
---               , sdl2 >= 2.5.4.0
+               , sdl2 >= 2.5.4.0
+               , text-show
+               , monomer >= 1.5.0.0
 
 executable omg
   hs-source-dirs: app
