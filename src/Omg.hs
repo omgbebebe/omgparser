@@ -16,5 +16,5 @@ run :: String -> IO ()
 run input = do
   print $ "running with input: " <> input
   case runParser omgP "some imput name" (T.pack input) of
-    Right res -> T.putStrLn $ "Parser command is:\n" <> (T.pack $ show res)
+    Right res -> T.putStrLn $ "Parsed command is:\n" <> (T.pack $ show res)
     Left err -> T.putStrLn $ "failed to parse input data"
