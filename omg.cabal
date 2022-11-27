@@ -1,0 +1,45 @@
+cabal-version: 3.0
+
+name: omg
+version: 1.0.0.2
+license: BSD-3-Clause
+license-file: LICENSE
+copyright: (c) Omg Bebebe
+author: Omg Bebebe
+maintainer: Omg Bebebe <omgbebebe@gmail.com>
+bug-reports: mailto:omgbebebe@gmail.com
+stability: stable
+homepage: http://www.haskell.org/omg/
+synopsis: strings parser PoC
+category: Console, Text
+build-type: Simple
+
+Description: this is a strings parser proof of concept
+
+source-repository head
+  type:     git
+  location: http://github.com/omgbebebe/omg
+
+flag threaded
+  default: True
+
+library
+  hs-source-dirs: src
+  exposed-modules: Omg
+                   Parser.Omg
+  build-depends: base >= 4.2 && < 5
+               , bytestring
+               , text
+               , aeson
+               , megaparsec
+--               , sdl2 >= 2.5.4.0
+
+executable omg
+  hs-source-dirs: app
+  main-is: main.hs
+  build-depends: base >= 4.2 && < 5
+               , omg
+
+
+  if flag(threaded)
+     ghc-options: -threaded
