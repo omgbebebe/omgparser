@@ -27,15 +27,17 @@ library
   hs-source-dirs: src
   exposed-modules: Omg
                    Gui
-                   Parser.Omg
+  other-modules:   Parser.Omg
   build-depends: base >= 4.2 && < 5
                , bytestring
                , text
                , aeson
                , lens
                , megaparsec
+               , network
                , sdl2 >= 2.5.4.0
                , text-show
+               , time
                , monomer >= 1.5.0.0
 
 executable omg

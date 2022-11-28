@@ -29,5 +29,16 @@ Parser command is:
 Omg
 ```
 
+# GUI with the unix socket interface
+You can run the parser in gui mode with a unix socker as an input interface. To do so provide a `--gui` as an only parameter.
+```sh
+nix run .# -- --gui
+```
+
+Then use socat or similar tool to send a message to the socket
+```sh
+echo "kubectl get pods -o yaml" | socat - /tmp/omgparser.socket
+```
+ 
 # DevEnv
 To fire up a development environmetn use `nix develop` and then `cabal repl`.
